@@ -29,8 +29,13 @@ import com.example.dinerdropper.model.Cart;
 import com.example.dinerdropper.model.Meals;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -39,6 +44,7 @@ import static com.example.dinerdropper.fragments.homeFragment.EXTRA_DETAIL;
 public class DetailActivity extends AppCompatActivity implements detailview {
     private ActivityDetailBinding binding;
     Random rand = new Random();
+    String ordermeal ,orderthumb,ordernumber,orderprice;
 
 
 
@@ -210,8 +216,12 @@ public class DetailActivity extends AppCompatActivity implements detailview {
 
                 Toast toast = Toast.makeText(DetailActivity.this, numborderTXT.getText() +" "+ meal.getStrMeal() + " added to cart",Toast.LENGTH_SHORT);
                 toast.show();
-                String order=meal.getStrMeal()+" "+meal.getStrMealThumb()+" "+numborderTXT.getText()+" "+price.getText();
-                Log.d("TAG",order);
+                ordermeal=meal.getStrMeal();
+                orderthumb=meal.getStrMealThumb();
+                ordernumber=numborderTXT.toString();
+                orderprice=price.toString();
+
+                addtocartlist();
 
 
             }
@@ -225,6 +235,31 @@ public class DetailActivity extends AppCompatActivity implements detailview {
 
 
     }
+
+    private void addtocartlist() {
+        String saveCurrentDate,saveCurrentTime;
+        Calendar callForDate = Calendar.getInstance();
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd MMM, yyyy");
+        saveCurrentDate=currentDate.format(callForDate.getTime());
+
+        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss");
+        saveCurrentTime=currentDate.format(callForDate.getTime());
+
+        DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
+
+        final HashMap<String,Object> cartMap = new HashMap<>();
+        cartMap.put("Meal",ordermeal);
+        cartMap.put("Mealthumb",orderthumb);
+        cartMap.put("Mealnum",ordernumber);
+        cartMap.put("Mealprice",orderprice);
+        cartMap.put("Date",saveCurrentDate);
+        cartMap.put("Time",saveCurrentTime);
+
+        cartListRef.child("User View");
+
+
+    }
+
     @Override
     public void showLoading() {
         ProgressBar progressBar = binding.getRoot().findViewById(R.id.progressBar);

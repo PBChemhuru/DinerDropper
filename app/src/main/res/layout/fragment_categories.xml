@@ -28,10 +28,11 @@
                         android:scaleType="centerCrop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
+
                     <ImageView
-                        android:background="#D9770202"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="#D9020E77" />
                     <ImageView
                         android:id="@+id/imageCategory"
                         android:src="@drawable/sample_image_category"
