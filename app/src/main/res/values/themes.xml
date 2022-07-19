@@ -11,7 +11,8 @@
     <style name="Theme.DinerDropper.NoActionBar" parent="Theme.DinerDropper">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent
+        </item>
         <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
     </style>
 
@@ -21,5 +22,10 @@
     </style>
 
     <style name="Theme.DinnerDropper.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Theme.DinnerDropper.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.DinerDropper.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.DinerDropper.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

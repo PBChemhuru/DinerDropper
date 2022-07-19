@@ -42,8 +42,9 @@
                     android:drawablePadding="10dp"
                     android:gravity="center_vertical"
                     android:padding="10dp"
-                    android:text="@string/search_your_meal"
-                    android:textColor="@color/colorPrimaryLight"
+                    android:hint="@string/search_your_meal"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="TouchTargetSizeCheck" />
@@ -104,6 +105,7 @@
             <include android:id="@+id/shimmerCategory"
                 layout="@layout/item_recycler_category_shimmer" />
             <TextView
+                android:id="@+id/logout"
                 android:padding="10dp"
                 android:gravity="center"
                 android:textColor="@color/colorWhite"

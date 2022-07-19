@@ -17,7 +17,6 @@ public class CategoryPresenter {
     public CategoryPresenter(categoryview view) {
         this.view = view;
     }
-
     public void getMealByCategory(String category) {
 
         view.showLoading();

@@ -16,10 +16,6 @@ public class Categories implements Serializable {
         return categories;
     }
 
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
-    }
-
     public static class Category implements Serializable {
 
         @SerializedName("idCategory")
@@ -68,5 +64,7 @@ public class Categories implements Serializable {
         }
 
     }
-
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
 }

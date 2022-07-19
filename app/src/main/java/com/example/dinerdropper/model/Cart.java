@@ -3,48 +3,45 @@ package com.example.dinerdropper.model;
 import java.io.Serializable;
 
 public class Cart implements Serializable {
-    private String mealName;
-    private String mealThumb;
-    private int fee;
-    private int numberInCart;
+    private String Meal,Mealnum,Mealprice,Mealthumb;
+    public Cart(){}
 
-
-    public Cart(String mealName, String mealThumb, int fee, int numberInCart){
-        this.mealName = mealName;
-        this.mealThumb= mealThumb;
-        this.fee= fee;
-        this.numberInCart = numberInCart;
+    public Cart(String meal, String mealnum, String mealprice, String mealthumb) {
+        Meal = meal;
+        Mealnum = mealnum;
+        Mealprice = mealprice;
+        Mealthumb = mealthumb;
     }
 
-    public String getMealName() {
-        return mealName;
+    public String getMeal() {
+        return Meal;
     }
 
-    public void setMealName(String mealName) {
-        this.mealName = mealName;
+    public void setMeal(String meal) {
+        Meal = meal;
     }
 
-    public String getMealThumb() {
-        return mealThumb;
+    public String getMealnum() {
+        return Mealnum;
     }
 
-    public void setMealThumb(String mealThumb) {
-        this.mealThumb = mealThumb;
+    public void setMealnum(String mealnum) {
+        Mealnum = mealnum;
     }
 
-    public int getFee() {
-        return fee;
+    public String getMealprice() {
+        return Mealprice;
     }
 
-    public void setFee(int fee) {
-        this.fee = fee;
+    public void setMealprice(String mealprice) {
+        Mealprice = mealprice;
     }
 
-    public int getNumberInCart() {
-        return numberInCart;
+    public String getMealthumb() {
+        return Mealthumb;
     }
 
-    public void setNumberInCart(int numberInCart) {
-        this.numberInCart = numberInCart;
+    public void setMealthumb(String mealthumb) {
+        Mealthumb = mealthumb;
     }
 }

@@ -19,40 +19,18 @@ public class Meals {
     }
 
     public class Meal {
-
-        @SerializedName("idMeal")
-        @Expose
-        private String idMeal;
-        @SerializedName("totalincart")
-        @Expose
-        private int totalincart;
         @SerializedName("strMeal")
         @Expose
         private String strMeal;
-        @SerializedName("fee")
-        @Expose
-        private Double fee;
-        @SerializedName("strDrinkAlternate")
-        @Expose
-        private Object strDrinkAlternate;
         @SerializedName("strCategory")
         @Expose
         private String strCategory;
         @SerializedName("strArea")
         @Expose
         private String strArea;
-        @SerializedName("strInstructions")
-        @Expose
-        private String strInstructions;
         @SerializedName("strMealThumb")
         @Expose
         private String strMealThumb;
-        @SerializedName("strTags")
-        @Expose
-        private String strTags;
-        @SerializedName("strYoutube")
-        @Expose
-        private String strYoutube;
         @SerializedName("strIngredient1")
         @Expose
         private String strIngredient1;
@@ -113,6 +91,18 @@ public class Meals {
         @SerializedName("strIngredient20")
         @Expose
         private String strIngredient20;
+        @SerializedName("strTags")
+        @Expose
+        private String strTags;
+        @SerializedName("strInstructions")
+        @Expose
+        private String strInstructions;
+        @SerializedName("strYoutube")
+        @Expose
+        private String strYoutube;
+        @SerializedName("strDrinkAlternate")
+        @Expose
+        private Object strDrinkAlternate;
         @SerializedName("strMeasure1")
         @Expose
         private String strMeasure1;
@@ -179,18 +169,14 @@ public class Meals {
         @SerializedName("dateModified")
         @Expose
         private Object dateModified;
+        @SerializedName("idMeal")
+        @Expose
+        private String idMeal;
 
         public String getIdMeal() {
             return idMeal;
         }
 
-        public int getTotalincart() {
-            return totalincart;
-        }
-
-        public void setTotalincart(int totalincart) {
-            this.totalincart = totalincart;
-        }
 
         public void setIdMeal(String idMeal) {
             this.idMeal = idMeal;
@@ -198,14 +184,6 @@ public class Meals {
 
         public String getStrMeal() {
             return strMeal;
-        }
-
-        public Double getFee() {
-            return fee;
-        }
-
-        public void setFee(Double fee) {
-            this.fee = fee;
         }
 
         public void setStrMeal(String strMeal) {

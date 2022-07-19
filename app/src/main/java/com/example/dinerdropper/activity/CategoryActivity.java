@@ -7,7 +7,6 @@ import static com.example.dinerdropper.fragments.homeFragment.EXTRA_POSITION;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,7 +56,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void initActionBar() {
-        Toolbar toolbar = (Toolbar) categoryBinding.getRoot().findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) categoryBinding.getRoot().findViewById(R.id.drawertoolbar);
         setSupportActionBar(toolbar);
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

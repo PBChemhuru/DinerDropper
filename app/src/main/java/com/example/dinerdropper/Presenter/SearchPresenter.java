@@ -1,5 +1,8 @@
 package com.example.dinerdropper.Presenter;
 
+import android.widget.Toast;
+
+import com.esotericsoftware.minlog.Log;
 import com.example.dinerdropper.Utils;
 import com.example.dinerdropper.Views.searchview;
 import com.example.dinerdropper.model.Meals;
@@ -10,7 +13,6 @@ import retrofit2.Response;
 
 public class SearchPresenter {
     searchview view;
-
     public SearchPresenter(searchview view){this.view=view;}
     public void searchMeals(String mealName){
         view.showLoading();
@@ -23,6 +25,7 @@ public class SearchPresenter {
                 }
                 else {
                     view.onErrorLoading(response.message());
+
                 }
             }
 
@@ -56,5 +59,4 @@ public class SearchPresenter {
             }
         });
     }
-
 }

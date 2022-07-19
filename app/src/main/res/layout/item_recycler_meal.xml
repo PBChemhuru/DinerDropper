@@ -15,12 +15,13 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageView
             android:id="@+id/mealThumb"
-            android:scaleType="centerCrop"
-            android:src="@drawable/sample_image_meal"
             android:layout_width="match_parent"
-            android:layout_height="150dp"/>
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sample_image_meal" />
         <View
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -40,21 +41,22 @@
             android:background="?android:attr/selectableItemBackgroundBorderless"
             tools:ignore="NewApi"
             app:tint="@color/colorAccent" />
+
         <TextView
-            android:text="@string/meal_categories"
-            android:textSize="16sp"
-            android:textColor="@color/colorPrimaryText"
-            android:gravity="center"
-            android:maxLines="2"
-            android:ellipsize="end"
             android:id="@+id/mealName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/mealThumb"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/meal_categories"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="16sp" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

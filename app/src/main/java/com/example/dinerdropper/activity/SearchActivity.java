@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dinerdropper.Presenter.SearchPresenter;
 import com.example.dinerdropper.R;
@@ -30,6 +31,7 @@ public class SearchActivity extends AppCompatActivity implements searchview {
     private ActivitySearchBinding binding;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,6 @@ public class SearchActivity extends AppCompatActivity implements searchview {
         setContentView(binding.getRoot());
         Intent intent = getIntent();
         String search = intent.getStringExtra( EXTRA_SEARCH);
-        Log.d("tag",search);
         SearchPresenter presenter = new SearchPresenter(this);
         if(search.length()>1){
             presenter.searchMeal(search);
@@ -89,10 +90,10 @@ public class SearchActivity extends AppCompatActivity implements searchview {
         adapter.notifyDataSetChanged();
 
         adapter.setOnItemClickListener((view, position) -> {
-            TextView mealName = view.findViewById(R.id.mealName);
-            Intent Dintent =new Intent(this, DetailActivity.class);
-            Dintent.putExtra((String) EXTRA_DETAIL,mealName.getText().toString());
-            startActivity(Dintent);
+            TextView mealName = view.findViewById(R.id.smealName);
+            Intent intent =new Intent(this, DetailActivity.class);
+            intent.putExtra((String) EXTRA_DETAIL,mealName.getText().toString());
+            startActivity(intent);
         });
 
     }

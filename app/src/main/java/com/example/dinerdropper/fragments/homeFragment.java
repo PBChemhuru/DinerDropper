@@ -24,6 +24,7 @@ import com.example.dinerdropper.Utils;
 import com.example.dinerdropper.Views.homefragview;
 import com.example.dinerdropper.activity.CategoryActivity;
 import com.example.dinerdropper.activity.DetailActivity;
+import com.example.dinerdropper.activity.LancherActivity;
 import com.example.dinerdropper.activity.SearchActivity;
 import com.example.dinerdropper.adapter.RecyclerViewHomeAdapter;
 import com.example.dinerdropper.adapter.ViewPagerHeaderAdapter;
@@ -33,6 +34,8 @@ import com.example.dinerdropper.model.Meals;
 
 import java.io.Serializable;
 import java.util.List;
+
+import io.paperdb.Paper;
 
 public class homeFragment extends Fragment implements homefragview {
     public static final String EXTRA_POSITION = "position";
@@ -61,12 +64,6 @@ public class homeFragment extends Fragment implements homefragview {
         presenter.getMeals();
         presenter.getCatergories();
         EditText searchbar = binding.getRoot().findViewById(R.id.searchmeal);
-        searchbar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                searchbar.getText().clear();
-            }
-        });
         ImageView search = binding.getRoot().findViewById(R.id.search_button);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,9 +74,6 @@ public class homeFragment extends Fragment implements homefragview {
 
             }
         });
-
-
-
 
     }
 

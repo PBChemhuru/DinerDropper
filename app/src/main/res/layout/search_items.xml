@@ -22,21 +22,25 @@
                 android:layout_width="match_parent"
                 android:scaleType="centerCrop"
                 android:layout_height="match_parent" />
+
             <ImageView
-                android:src="@drawable/shadow_bottom_to_top"
                 android:layout_width="match_parent"
-                android:scaleType="centerCrop"
+                android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
-                android:layout_height="match_parent" />
+                android:layout_marginBottom="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/shadow_bottom_to_top" />
+
             <TextView
                 android:id="@+id/smealName"
-                android:textColor="@color/colorWhite"
-                android:textSize="17sp"
-                android:layout_margin="15dp"
-                android:layout_alignParentBottom="true"
-                android:text="Meal Name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="13dp"
+                android:text="Meal Name"
+                android:textColor="@color/colorWhite"
+                android:textSize="17sp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

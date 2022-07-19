@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "926989837366",
+    "firebase_url": "https://dinnerdropper-4aebd-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "dinnerdropper-4aebd",
+    "storage_bucket": "dinnerdropper-4aebd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926989837366:android:f39d3cbab1abf739372497",
+        "android_client_info": {
+          "package_name": "com.example.dinerdropper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926989837366-ed10i5uki5e1vpmgllq4hh2uo4enjssa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dinerdropper",
+            "certificate_hash": "141b6b294462fdd3d5c4e7097af7712ac0c6425f"
+          }
+        },
+        {
+          "client_id": "926989837366-8i1ikb3a2ogt7fbobpflhj68s73ka3d0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVtnQOdjuCeUoDnA5fa7ndkq1lFfleygE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926989837366-8i1ikb3a2ogt7fbobpflhj68s73ka3d0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

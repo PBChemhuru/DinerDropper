@@ -2,6 +2,7 @@ package com.example.dinerdropper.activity;
 
 import static com.example.dinerdropper.fragments.homeFragment.EXTRA_DETAIL;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.ViewCompat;
@@ -21,14 +22,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dinerdropper.Presenter.DetailPresenter;
+import com.example.dinerdropper.Prevalent;
 import com.example.dinerdropper.R;
 import com.example.dinerdropper.Utils;
 import com.example.dinerdropper.Views.detailview;
 import com.example.dinerdropper.databinding.ActivityDetailBinding;
-import com.example.dinerdropper.model.Cart;
 import com.example.dinerdropper.model.Meals;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -36,15 +40,14 @@ import com.squareup.picasso.Picasso;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Random;
-
-import static com.example.dinerdropper.fragments.homeFragment.EXTRA_DETAIL;
 
 public class DetailActivity extends AppCompatActivity implements detailview {
     private ActivityDetailBinding binding;
     Random rand = new Random();
     String ordermeal ,orderthumb,ordernumber,orderprice;
+    FloatingActionButton fabdetail;
+
 
 
 
@@ -59,15 +62,22 @@ public class DetailActivity extends AppCompatActivity implements detailview {
         setupActionBar();
         Intent intent =getIntent();
         String mealName = intent.getStringExtra((String) EXTRA_DETAIL);
-
         DetailPresenter presenter = new DetailPresenter(this);
         presenter.getMealById(mealName);
+        fabdetail = findViewById(R.id.fab);
+        fabdetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2= new Intent(DetailActivity.this,CartActivity.class);
+                startActivity(intent2);
+            }
+        });
 
 
     }
 
     private void setupColorActionBarIcon(Drawable favoriteItemColor) {
-        Toolbar toolbar= binding.getRoot().findViewById(R.id.toolbar);
+        Toolbar toolbar= binding.getRoot().findViewById(R.id.drawertoolbar);
         CollapsingToolbarLayout collapsingToolbarLayout = binding.getRoot().findViewById(R.id.collapsing_toolbar);
         AppBarLayout appBarLayout = binding.getRoot().findViewById(R.id.appbar);
         appBarLayout.addOnOffsetChangedListener((appBarLayout1, verticalOffset) -> {
@@ -88,7 +98,7 @@ public class DetailActivity extends AppCompatActivity implements detailview {
     }
 
     private void setupActionBar() {
-        Toolbar toolbar= binding.getRoot().findViewById(R.id.toolbar);
+        Toolbar toolbar= binding.getRoot().findViewById(R.id.drawertoolbar);
         CollapsingToolbarLayout collapsingToolbarLayout = binding.getRoot().findViewById(R.id.collapsing_toolbar);
         setSupportActionBar(toolbar);
         collapsingToolbarLayout.setContentScrimColor(getResources().getColor(R.color.colorWhite));
@@ -183,7 +193,7 @@ public class DetailActivity extends AppCompatActivity implements detailview {
         TextView price = binding.getRoot().findViewById(R.id.priceTxt);
         final int[] numberOrder = {1};
         numborderTXT.setText(String.valueOf(numberOrder[0]));
-        price.setText("$" +String.valueOf(rand.nextInt((40 - 20) + 1) + 20));
+        price.setText(String.valueOf(rand.nextInt((40 - 20) + 1) + 20));
 
         plsbtn.setClickable(true);
 
@@ -218,22 +228,14 @@ public class DetailActivity extends AppCompatActivity implements detailview {
                 toast.show();
                 ordermeal=meal.getStrMeal();
                 orderthumb=meal.getStrMealThumb();
-                ordernumber=numborderTXT.toString();
-                orderprice=price.toString();
+                ordernumber=numborderTXT.getText().toString();
+                orderprice=price.getText().toString();
 
                 addtocartlist();
 
 
             }
         });
-
-
-
-
-
-
-
-
     }
 
     private void addtocartlist() {
@@ -245,7 +247,7 @@ public class DetailActivity extends AppCompatActivity implements detailview {
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss");
         saveCurrentTime=currentDate.format(callForDate.getTime());
 
-        DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
+        DatabaseReference cartListRef = FirebaseDatabase.getInstance("https://dinnerdropper-fb12f-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Cart List");
 
         final HashMap<String,Object> cartMap = new HashMap<>();
         cartMap.put("Meal",ordermeal);
@@ -255,7 +257,18 @@ public class DetailActivity extends AppCompatActivity implements detailview {
         cartMap.put("Date",saveCurrentDate);
         cartMap.put("Time",saveCurrentTime);
 
-        cartListRef.child("User View");
+        cartListRef.child("User View").child(Prevalent.CurrentOnlineUser.getPhone()).child("Products").child(ordermeal).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task)
+            {
+                if(task.isSuccessful())
+                {
+                    Toast.makeText(DetailActivity.this, ordernumber +" "+ ordermeal + " added to cart",Toast.LENGTH_SHORT).show();
+
+
+                }
+            }
+        });
 
 
     }

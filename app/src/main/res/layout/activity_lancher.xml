@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/registerbackground"
+    tools:context=".activity.LancherActivity">
+
+
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="384dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/archivo_black"
+        android:text="Dinner Dropper"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="45sp"
+        android:layout_alignParentRight="true" />
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="127dp"
+        android:layout_height="97dp"
+        android:layout_below="@+id/Title"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@drawable/dinnerdropperlogo" />
+
+    <Button
+        android:id="@+id/join_nowbtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/Logo"
+        android:layout_marginTop="220dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/input_design"
+        android:text="Join Now"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/loginbtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/join_nowbtn"
+        android:background="@drawable/input_design"
+        android:text="Already have an account?Log in"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

@@ -3,6 +3,8 @@
     package="com.example.dinerdropper">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,13 +14,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DinerDropper">
         <activity
+            android:name=".activity.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.OrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ConfirmOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.HomedrawerActivity"
+            android:exported="true"
+            android:label="@string/title_activity_homedrawer"
+            android:theme="@style/Theme.DinerDropper.NoActionBar" />
+        <activity
+            android:name=".activity.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.SearchActivity"
             android:exported="false" />
         <activity
             android:name=".activity.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.LancherActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,8 +55,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.DetailActivity"
             android:theme="@style/Theme.DinerDropper.NoActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

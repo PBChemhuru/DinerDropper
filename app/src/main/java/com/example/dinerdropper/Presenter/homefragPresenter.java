@@ -13,7 +13,6 @@ import retrofit2.Response;
 
 public class homefragPresenter {
     homefragview view;
-
     public homefragPresenter(homefragview view) {
         this.view = view;
     }
@@ -35,8 +34,7 @@ public class homefragPresenter {
                               public void onFailure(Call<Meals> call, Throwable t) {
                                   view.onErrorloading(t.getLocalizedMessage());
                               }
-                          }
-        );
+                          });
     }
 
     public void getCatergories(){

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppBarLayoutTheme">
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/drawertoolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>

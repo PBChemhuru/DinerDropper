@@ -52,6 +52,7 @@ public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchRecyclerAd
     public class SearchHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView smealThumb= itemView.findViewById(R.id.smealThumb);
         TextView smealName = itemView.findViewById(R.id.smealName);
+
         public SearchHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener((View.OnClickListener) this);

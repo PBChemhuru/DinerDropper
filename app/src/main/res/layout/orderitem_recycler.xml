@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="10dp"
+    android:background="@color/colorPrimary"
+    android:elevation="3dp">
+
+    <TextView
+        android:id="@+id/orderUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="196dp"
+        android:text="Username"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/orderPhone_number"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/orderAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="324dp"
+        android:text="Address"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderUsername" />
+
+    <TextView
+        android:id="@+id/orderDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Date"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/orderAddress"
+        tools:layout_editor_absoluteX="3dp" />
+
+    <TextView
+        android:id="@+id/orderPhone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Phone number"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/order_Price"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/order_Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Order Price"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/showOrders"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/showOrders"
+        android:layout_width="318dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="17dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="99dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

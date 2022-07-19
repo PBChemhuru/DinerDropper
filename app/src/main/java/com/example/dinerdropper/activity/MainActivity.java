@@ -9,8 +9,6 @@ import android.os.Bundle;
 
 import com.example.dinerdropper.R;
 import com.example.dinerdropper.databinding.ActivityMainBinding;
-import com.example.dinerdropper.fragments.CartFragment;
-import com.example.dinerdropper.fragments.FavouriteFragment;
 import com.example.dinerdropper.fragments.homeFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,12 +29,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.homeFragment2:
                     replaceFragment(new homeFragment());
                     break;
-                case R.id.cartFragment:
-                    replaceFragment(new CartFragment());
-                    break;
-                case R.id.favouriteFragment:
-                    replaceFragment(new FavouriteFragment());
-
 
             }
 

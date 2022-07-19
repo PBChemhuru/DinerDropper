@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/registerbackground"
+    tools:context=".activity.SignupActivity">
+
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="384dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/archivo_black"
+        android:text="Dinner Dropper"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="45sp"
+        android:layout_alignParentRight="true" />
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="127dp"
+        android:layout_height="97dp"
+        android:layout_below="@+id/Title"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@drawable/dinnerdropperlogo" />
+
+    <EditText
+        android:id="@+id/regi_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Logo"
+        android:layout_marginTop="118dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/logininput2_design"
+        android:hint="Username"
+        android:padding="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/regi_phonenumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regi_username"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/logininput2_design"
+        android:hint="Phonenumber"
+        android:inputType="number"
+        android:padding="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/regi_password"
+        android:layout_width="409dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/logininput2_design"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/regi_phonenumber"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/regi_confirmpassword"
+        android:layout_width="409dp"
+        android:layout_height="66dp"
+        android:layout_below="@+id/regi_password"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/logininput2_design"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:padding="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/regi_nowbtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/regi_confirmpassword"
+        android:background="@drawable/input_design"
+        android:text="Register"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</RelativeLayout>
