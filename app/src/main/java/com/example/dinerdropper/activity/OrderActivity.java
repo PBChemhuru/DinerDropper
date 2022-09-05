@@ -29,7 +29,7 @@ public class OrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
-        ordersRef = FirebaseDatabase.getInstance("https://dinnerdropper-fb12f-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Order").child(Prevalent.CurrentOnlineUser.getPhone());
+        ordersRef = FirebaseDatabase.getInstance("https://dinnerdropper-ce772-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Order").child(Prevalent.CurrentOnlineUser.getPhone());
         ordersList = findViewById(R.id.orderlist);
         ordersList.setLayoutManager(new LinearLayoutManager(this));
     }

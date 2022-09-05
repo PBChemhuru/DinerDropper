@@ -89,7 +89,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
         if(!phone.equals("") && !answer1.equals("") && !answer2.equals("")){
 
-        DatabaseReference ref = FirebaseDatabase.getInstance("https://dinnerdropper-fb12f-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(phone);
+        DatabaseReference ref = FirebaseDatabase.getInstance("https://dinnerdropper-ce772-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(phone);
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -191,7 +191,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         }
         else
         {
-            DatabaseReference ref = FirebaseDatabase.getInstance("https://dinnerdropper-fb12f-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(Prevalent.CurrentOnlineUser.getPhone());
+            DatabaseReference ref = FirebaseDatabase.getInstance("https://dinnerdropper-ce772-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(Prevalent.CurrentOnlineUser.getPhone());
             HashMap<String, Object> questiondataMap = new HashMap<>();
             questiondataMap.put("answer1", answer1);
             questiondataMap.put("answer2", answer2);
@@ -213,7 +213,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
     private void displayAnswers()
     {
-        DatabaseReference ref = FirebaseDatabase.getInstance("https://dinnerdropper-fb12f-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(Prevalent.CurrentOnlineUser.getPhone());
+        DatabaseReference ref = FirebaseDatabase.getInstance("https://dinnerdropper-ce772-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(Prevalent.CurrentOnlineUser.getPhone());
         ref.child("Security Questions").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
             Paper.book().write(Prevalent.UserPassword,password);
         }
         final DatabaseReference RootRef;
-        RootRef = FirebaseDatabase.getInstance("https://dinnerdropper-fb12f-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
+        RootRef = FirebaseDatabase.getInstance("https://dinnerdropper-ce772-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
